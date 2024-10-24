@@ -1,15 +1,21 @@
 package utils
 
 import (
+	"fmt"
+	"log"
 	"time"
-  "log"
-  "fmt"
 )
 
-func Retry(toRetry func() error) error {
+func Retry(toRetry func() error, numberOfTime ...int) error {
 	n := 0
 	var err error
-	for n < 10 {
+	var t int
+	if len(numberOfTime) != 0 {
+		t = numberOfTime[0]
+	} else {
+		t = 10
+	}
+	for n < t {
 		err = toRetry()
 		if err == nil {
 			break
