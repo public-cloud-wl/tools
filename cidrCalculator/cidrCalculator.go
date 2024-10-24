@@ -4,11 +4,12 @@ import (
 	"bytes"
 	"errors"
 	"fmt"
-	"github.com/apparentlymart/go-cidr/cidr"
 	"net"
 	"sort"
 	"strconv"
 	"strings"
+
+	"github.com/apparentlymart/go-cidr/cidr"
 )
 
 type cidrCalculator struct {
