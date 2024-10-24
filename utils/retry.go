@@ -2,6 +2,8 @@ package utils
 
 import (
 	"time"
+  "log"
+  "fmt"
 )
 
 func Retry(toRetry func() error) error {
